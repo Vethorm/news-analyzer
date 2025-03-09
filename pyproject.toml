@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "news-helper"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Vethorm", email = "13478023+Vethorm@users.noreply.github.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "beautifulsoup4>=4.13.3",
+    "dateparser>=1.2.1",
+    "feedparser>=6.0.11",
+    "httpx>=0.28.1",
+    "loguru>=0.7.3",
+    "playwright>=1.50.0",
+    "streamlit>=1.43.1",
+    "torch>=2.6.0",
+    "transformers>=4.49.0",
+]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu126" },
+]
+torchvision = [
+    { index = "pytorch-cu126" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
