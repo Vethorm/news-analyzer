@@ -16,7 +16,9 @@ if selected_article:
     article = articles[selected_article]
     st.page_link(article["url"], label="Article link")
 
-    # with st.spinner("Summarizing article...") as s:
-    article_text = extract_article_text(article["url"])
-    article_summary = summarize(article_text)
+    with st.spinner("Summarizing article...") as s:
+        article_text = extract_article_text(article["url"])
+        article_summary = summarize(article_text)
+    article_compression = (1 - (len(article_summary) / len(article_text))) * 100
+    st.write(f"Article compression: {article_compression:.2f}%")
     st.write(article_summary)
