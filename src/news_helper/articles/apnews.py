@@ -1,10 +1,11 @@
+from datetime import UTC, datetime, timedelta
+from functools import cache
+from urllib.parse import urljoin
+
+import dateparser
 import httpx
 from bs4 import BeautifulSoup
-from datetime import datetime, timedelta, UTC
-from urllib.parse import urljoin
-import dateparser
 from loguru import logger
-from functools import cache
 
 # Constants
 AP_NEWS_URL = "https://apnews.com/hub/ap-top-news"

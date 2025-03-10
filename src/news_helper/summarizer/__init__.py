@@ -1,5 +1,6 @@
-from news_helper.summarizer.utils import summarize_recursive
 from loguru import logger
+
+from news_helper.summarizer.utils import summarize_recursive
 
 
 def summarize(text: str) -> str:

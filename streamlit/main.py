@@ -1,5 +1,5 @@
 import streamlit as st
-from news_helper.articles.apnews import get_recent_articles, extract_article_text
+from news_helper.articles.apnews import extract_article_text, get_recent_articles
 from news_helper.summarizer import summarize
 
 st.title("New Analyzer")
