@@ -13,7 +13,10 @@ selected_article = st.selectbox("Pick an article", list(articles.keys()))
 if selected_article:
     st.header(selected_article)
 
+    article = articles[selected_article]
+    st.page_link(article["url"], label="Article link")
+
     # with st.spinner("Summarizing article...") as s:
-    article_text = extract_article_text(articles[selected_article]["url"])
+    article_text = extract_article_text(article["url"])
     article_summary = summarize(article_text)
     st.write(article_summary)
